@@ -1,4 +1,5 @@
 import ferramentas
+
 while True:
     ferramentas.menu("MENU PRINCIPAL")
     while True:
@@ -7,9 +8,9 @@ while True:
             if opc.isnumeric():
                 opc = int(opc)
                 if 1 <= opc <= 5:
-                      break
+                    break
                 else:
-                      print("\033[0;31mERRO! Opcao invalida.\033[m")
+                    print("\033[0;31mERRO! Opcao invalida.\033[m")
             else:
                 print("\033[0;31mERRO! Opcao invalida.\033[m")
         except KeyboardInterrupt:
@@ -17,18 +18,18 @@ while True:
             break
 
     if opc == 1:
-            ferramentas.menu("PESSOAS CADASTRADAS", False)
-            ferramentas.pessoas(opc)
+        ferramentas.menu("PESSOAS CADASTRADAS", False)
+        ferramentas.pessoas(opc)
     if opc == 2:
-            ferramentas.menu("NOVO CADASTRO", False)
-            ferramentas.pessoas(opc)
+        ferramentas.menu("NOVO CADASTRO", False)
+        ferramentas.pessoas(opc)
     if opc == 3:
-            ferramentas.menu("EDITAR CADASTRO", False)
-            ferramentas.pessoas(opc)
+        ferramentas.menu("EDITAR CADASTRO", False)
+        ferramentas.pessoas(opc)
     if opc == 4:
-            ferramentas.menu("DELETAR CADASTRO", False)
-            ferramentas.pessoas(opc)
+        ferramentas.menu("DELETAR CADASTRO", False)
+        ferramentas.pessoas(opc)
     if opc == 5:
-            break
+        break
 
 print("PROGRAMA FINALIZADO")

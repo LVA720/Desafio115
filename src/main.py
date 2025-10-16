@@ -1,6 +1,5 @@
-def main():
-    print("Hello from src!")
-
-
-if __name__ == "__main__":
-    main()
+import subprocess
+try:
+    subprocess.run(["python", "Desafio115.py"])
+except KeyboardInterrupt:
+    print()
