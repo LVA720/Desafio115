@@ -44,6 +44,8 @@ def pessoas(n):
                     break
         except KeyboardInterrupt:
             print()
+        except OSError:
+            print("Nenhum cadastro encontrado! Crie um novo")
     if n == 3:
         try:
             with open("dados.json", "r", encoding="utf-8") as arquivo:
@@ -77,28 +79,35 @@ def pessoas(n):
 
             with open("dados.json", "w", encoding="utf-8") as arquivo:
                 json.dump(data, arquivo, indent=4)
+        except OSError:
+            print("Nenhum cadastro encontrado! Crie um novo")
         except Exception as erro:
             print(f"Erro ao editar o cadastro {erro}")
     if n == 4:
-        with open("dados.json", "r", encoding="utf-8") as arquivo:
-            data = json.load(arquivo)
-            for i, c in enumerate(data):
-                print(f"{i} {c['nome']:<20} {c['idade']:>20}")
-            while True:
-                try:
-                    esc = int(input("Qual cadastro voce quer deletar? "))
-                    del data[esc]
-                    with open("dados.json", "w", encoding="utf-8") as arquivo:
-                        json.dump(data, arquivo, indent=4)
-                except IndexError:
-                    print("\033[0;31mDigite um numero da lista!\033[m")
-                except ValueError:
-                    print("\033[0;31mDigite um numero da lista!\033[m")
-                except KeyboardInterrupt:
-                    print()
-                    break
-                else:
-                    break
+        try:
+            with open("dados.json", "r", encoding="utf-8") as arquivo:
+                data = json.load(arquivo)
+                for i, c in enumerate(data):
+                    print(f"{i} {c['nome']:<20} {c['idade']:>20}")
+                while True:
+                    try:
+                        esc = int(input("Qual cadastro voce quer deletar? "))
+                        del data[esc]
+                        with open("dados.json", "w", encoding="utf-8") as arquivo:
+                            json.dump(data, arquivo, indent=4)
+                    except IndexError:
+                        print("\033[0;31mDigite um numero da lista!\033[m")
+                    except ValueError:
+                        print("\033[0;31mDigite um numero da lista!\033[m")
+                    except KeyboardInterrupt:
+                        print()
+                        break
+                    except OSError:
+                        print("Nenhum cadastro encontrado! Crie um novo")
+                    else:
+                        break
+        except OSError:
+            print("Nenhum cadastro encontrado! Crie um novo")
 
 
 galera = []
