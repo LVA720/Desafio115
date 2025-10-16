@@ -7,12 +7,5 @@
 
 ## 2. Como iniciar
 
-apos instalar o uv, execute este comando dentro da pasta src
-
-`uv sync`
-
-para rodar o script principal
-
-`uv run src\main.py`
-
-------------------------
+1. `uv sync`
+2. `uv run src\main.py`
