@@ -3,15 +3,7 @@
 
 ## 1. Requisitos
 
-Python 3.12 ou superior
-
-Site com lista de download do [Python](https://www.python.org/downloads/)
-
-uv -instalado
-
-Site com instrucoes de download do [uv](https://docs.astral.sh/uv/getting-started/installation/)
-
-------------------------
+- [install uv](https://docs.astral.sh/uv/getting-started/installation/)
 
 ## 2. Como iniciar
 
