@@ -2,6 +2,7 @@ import ferramentas
 
 while True:
     ferramentas.menu("MENU PRINCIPAL")
+    print("\033[90mCtrl + C finaliza o programa\033[m")
     while True:
         try:
             opc = str(input("\033[32m Sua Opcao: \033[m"))

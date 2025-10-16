@@ -34,7 +34,7 @@ def pessoas(n):
                 # bruno gay
                 except KeyboardInterrupt:
                     break
-                except:
+                except ValueError:
                     print("\033[0;31mERRO! por favor, digite um numero inteiro!\033[m")
                 else:
                     galera.append(pessoa.copy())
