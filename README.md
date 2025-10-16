@@ -5,7 +5,13 @@
 
 - [install uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-## 2. Como iniciar
+## 2. Adicionar/Remover pacotes
+
+- `uv add <package>` (add dependencies to the project)
+- `uv remove <package>` (remove dependencies from the project)
+- `uv add --dev pytest` (add a development dependency)
+
+## 3. Como iniciar
 
 1. `uv sync`
 2. `uv run src\main.py`
