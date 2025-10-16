@@ -9,6 +9,8 @@ Site com lista de download do [Python](https://www.python.org/downloads/)
 
 uv -instalado
 
+Site com instrucoes de download do [uv](https://docs.astral.sh/uv/getting-started/installation/)
+
 ------------------------
 
 ## 2. Como iniciar
