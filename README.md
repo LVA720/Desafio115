@@ -13,6 +13,6 @@ apos instalar o uv, execute este comando dentro da pasta src
 
 para rodar o script principal
 
-`uv run main.py`
+`uv run src\main.py`
 
 ------------------------
