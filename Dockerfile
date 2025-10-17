@@ -1,6 +1,5 @@
-FROM python:3.12.8
-WORKDIR Desafio115
+FROM python:3.12-slim
 
-COPY . . 
+COPY src src
 
 CMD ["python", "src/main.py"]

@@ -15,3 +15,10 @@
 
 1. `uv sync`
 2. `uv run src\main.py`
+
+## 4. Docker comandos
+
+- `docker build <imagename> .` (create image from Dockerfile)
+- `docker run -it <imagename>` (run image)
+- `docker compose build` (create images defined by docker-compose)
+- `docker compose run -it <servicename>` (execute a service of docker-compose in interactive mode)

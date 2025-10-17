@@ -7,7 +7,7 @@ def main():
         print("\033[90mCtrl + C finaliza o programa\033[m")
         while True:
             try:
-                opc = str(input("\033[32m Sua Opcao: \033[m"))
+                opc = str(input("Sua Opcao: "))
                 if opc.isnumeric():
                     opc = int(opc)
                     if 1 <= opc <= 5:
