@@ -22,3 +22,8 @@
 - `docker run -it <imagename>` (run image)
 - `docker compose build` (create images defined by docker-compose)
 - `docker compose run -it <servicename>` (execute a service of docker-compose in interactive mode)
+
+## 5. UV venv activate
+
+- `.venv\Scripts\activate` - activate uv venv
+- `.venv\Scripts\deactivate` - deactivate uv venv
