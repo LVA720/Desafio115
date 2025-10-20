@@ -1,5 +1,7 @@
-from meupacote import menu, pessoas
+from meupacote import menu
+from meupacote import humano
 
+pessoa = humano("dados.json")
 
 def main():
     while True:
@@ -22,21 +24,19 @@ def main():
 
         if opc == 1:
             menu("PESSOAS CADASTRADAS", False)
-            pessoas(opc)
+            pessoa.cadastro()
         if opc == 2:
             menu("NOVO CADASTRO", False)
-            pessoas(opc)
+            pessoa.cadastrar()
         if opc == 3:
             menu("EDITAR CADASTRO", False)
-            pessoas(opc)
+            pessoa.editar()
         if opc == 4:
             menu("DELETAR CADASTRO", False)
-            pessoas(opc)
+            pessoa.apagar()
         if opc == 5:
+            print("\nPROGRAMA FINALIZADO")
             break
-
-print("PROGRAMA FINALIZADO")
 
 if __name__ == "__main__":
     main()
-    

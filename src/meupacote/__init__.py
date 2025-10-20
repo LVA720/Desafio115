@@ -1,6 +1,5 @@
-from .ferramentas import menu, pessoas
+from .ferramentas import menu, humano
 
 menu("")
-pessoas("")
-
+pessoa = humano("dados.json")
 print("ferramentas importadas")

@@ -13,11 +13,24 @@ def menu(txt, opc=True):
         print("\033[33m4\033[m - \033[34m Apagar cadastro\033[m")
         print("\033[33m5\033[m - \033[34m Sair do Sistema\033[m")
 
+class humano:
 
-def pessoas(n):
-    global galera
-    pessoa = {}
-    if n == 1:
+    def __init__(self, arquivo):
+        self.arquivo = arquivo
+        self.galera = self.carregar_dados()
+        self.pessoa = {}
+    def carregar_dados(self):
+        try:
+            with open("dados.json", "r", encoding="utf-8") as arquivo:
+                return json.load(arquivo)
+        except OSError:
+            return []
+
+    def salvar_dados(self):
+        with open("dados.json", "w", encoding="utf-8") as arquivo:
+            json.dump(self.galera, arquivo, indent=4)
+
+    def cadastro(self):
         try:
             with open("dados.json", "r", encoding="utf-8") as arquivo:
                 galera = json.load(arquivo)
@@ -25,30 +38,30 @@ def pessoas(n):
             print("Nenhum cadastro encontrado! Crie um novo")
         for c in galera:
             print(f"{c['nome']:<20} {c['idade']:>20}")
-    if n == 2:
+    def cadastrar(self):
         try:
-            pessoa["nome"] = str(input("Nome: "))
+            self.pessoa["nome"] = str(input("Nome: "))
             while True:
                 try:
-                    pessoa["idade"] = abs(int(input("Idade: ")))
+                    self.pessoa["idade"] = abs(int(input("Idade: ")))
                 # bruno gay
                 except KeyboardInterrupt:
                     break
                 except ValueError:
                     print("\033[0;31mERRO! por favor, digite um numero inteiro!\033[m")
                 else:
-                    galera.append(pessoa.copy())
-                    with open("dados.json", "w", encoding="utf-8") as arquivo:
-                        json.dump(galera, arquivo, ensure_ascii=False, indent=4)
-                    pessoa.clear()
+                    self.galera.append(self.pessoa.copy())
+                    self.salvar_dados()
+                    self.pessoa.clear()
                     break
         except KeyboardInterrupt:
             print()
         except OSError:
             print("Nenhum cadastro encontrado! Crie um novo")
-    if n == 3:
+
+    def editar(self):
         try:
-            with open("dados.json", "r", encoding="utf-8") as arquivo:
+            with open ("dados.json", "r", encoding="utf-8") as arquivo:
                 data = json.load(arquivo)
             for i, c in enumerate(data):
                 print(f"{i} {c['nome']:<20} {c['idade']:>20}")
@@ -62,10 +75,9 @@ def pessoas(n):
                             data[esc]["idade"] = int(input("Idade: "))
                             print("Cadastro Editado com sucesso!")
                             break
+
                         except ValueError:
-                            print(
-                                "\033[0;31mERRO! por favor, digite um numero inteiro!\033[m"
-                            )
+                            print("\033[0;31mERRO! por favor, digite um numero inteiro!\033[m")
                 except IndexError:
                     print("\033[0;31mERRO! por favor, digite um numero da lista!\033[m")
                 except ValueError:
@@ -83,34 +95,32 @@ def pessoas(n):
             print("Nenhum cadastro encontrado! Crie um novo")
         except Exception as erro:
             print(f"Erro ao editar o cadastro {erro}")
-    if n == 4:
+    def apagar(self):
         try:
-            with open("dados.json", "r", encoding="utf-8") as arquivo:
+            with open ("dados.json", "r", encoding="utf-8") as arquivo:
                 data = json.load(arquivo)
-                for i, c in enumerate(data):
-                    print(f"{i} {c['nome']:<20} {c['idade']:>20}")
-                while True:
-                    try:
-                        esc = int(input("Qual cadastro voce quer deletar? "))
-                        del data[esc]
-                        with open("dados.json", "w", encoding="utf-8") as arquivo:
-                            json.dump(data, arquivo, indent=4)
-                    except IndexError:
-                        print("\033[0;31mDigite um numero da lista!\033[m")
-                    except ValueError:
-                        print("\033[0;31mDigite um numero da lista!\033[m")
-                    except KeyboardInterrupt:
-                        print()
-                        break
-                    except OSError:
-                        print("Nenhum cadastro encontrado! Crie um novo")
-                    else:
-                        break
+            for i, c in enumerate(data):
+                print(f"{i} {c['nome']:<20} {c['idade']:>20}")
+            while True:
+                try:
+                    esc = int(input("Qual cadastro voce quer deletar? "))
+                    del self.galera[esc]
+                    self.salvar_dados()
+
+                except IndexError:
+                    print("\033[0;31mDigite um numero da lista!\033[m")
+                except ValueError:
+                    print("\033[0;31mDigite um numero da lista!\033[m")
+                except KeyboardInterrupt:
+                    print()
+                    break
+                except OSError:
+                    print("Nenhum cadastro encontrado! Crie um novo")
+                else:
+                    break
         except OSError:
             print("Nenhum cadastro encontrado! Crie um novo")
 
-
-galera = []
 if exists("dados.json"):
     with open("dados.json", "r", encoding="utf-8") as arquivo:
         galera = json.load(arquivo)
