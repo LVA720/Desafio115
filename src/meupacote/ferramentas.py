@@ -7,11 +7,9 @@ def menu(txt, opc=True):
     print(f"{txt:^30}")
     print("-" * 30)
     if opc:
-        print("\033[33m1\033[m - \033[34m Ver Pessoas cadastradas\033[m")
-        print("\033[33m2\033[m - \033[34m Cadastrar nova Pessoa\033[m")
-        print("\033[33m3\033[m - \033[34m Editar cadastro\033[m")
-        print("\033[33m4\033[m - \033[34m Apagar cadastro\033[m")
-        print("\033[33m5\033[m - \033[34m Sair do Sistema\033[m")
+        escolhas = ["Ver Pessoas cadastradas", "Cadastrar nova Pessoa", "Editar cadastro","Apagar cadastro", "Sair do Sistema"]
+        for index, element in enumerate(escolhas):
+            print(f"\033[33m{index+1}\033[m - \033[34m {element}\033[m")
 
 class humano:
 
