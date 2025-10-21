@@ -20,12 +20,12 @@ don't use uv to run application because the application is already set to run in
 
 ## 4. Docker comandos
 
-- `docker build <imagename> .` (create image from Dockerfile)
-- `docker run -it <imagename>` (run image)
 - `docker compose build` (create images defined by docker-compose)
 - `docker compose run -it <servicename>` (execute a service of docker-compose in interactive mode)
 
-## 5. UV venv activate
+## 5. UV venv activate (DEPRECATED)
+
+don't use because the application is already set to run inside docker container
 
 - `.venv\Scripts\activate` - activate uv venv
 - `.venv\Scripts\deactivate` - deactivate uv venv
