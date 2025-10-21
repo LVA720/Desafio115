@@ -1,0 +1,22 @@
+{
+  "read_peoples": {
+    "title": "PESSOAS CADASTRADAS",
+    "description": "Ver Pessoas cadastradas"
+  },
+  "create_people": {
+    "title": "NOVO CADASTRO",
+    "description": "Cadastrar nova Pessoa"
+  },
+  "edit_people": {
+    "title": "EDITAR CADASTRO",
+    "description": "Editar cadastro"
+  },
+  "delete_people": {
+    "title": "DELETAR CADASTRO",
+    "description": "Apagar cadastro"
+  },
+  "exit_program": {
+    "title": "SAIR DO SISTEMA",
+    "description": "Sair do Sistema"
+  }
+}
