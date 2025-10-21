@@ -11,7 +11,9 @@
 - `uv remove <package>` (remove dependencies from the project)
 - `uv add --dev pytest` (add a development dependency)
 
-## 3. Como iniciar
+## 3. Como iniciar (DEPRECATED)
+
+don't use uv to run application because the application is already set to run inside docker container
 
 1. `uv sync`
 2. `uv run src\main.py`
